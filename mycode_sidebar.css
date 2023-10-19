@@ -1,0 +1,81 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.canvas {
+    /*width: 100%; /* width100% は、背景画像の大きさをレスポンシブにするならこれはいらない。*/
+    height: 100vh;
+    background-color: black;
+    background-image: url(./img/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    transition: all 1s;
+}
+.canvas .sidebar {
+    position: absolute;
+    top: 0;
+    left: -251px;
+    height: 100%;
+    background-color: rgba(127 61 20 / 97%);
+    color: white;
+    transition: 1s;
+}
+.canvas .active {
+    transition: 1s;
+    transform: translateX(251px);
+}
+.sidebar-header {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    background-color: rgba(174, 105, 63, 0.97);
+    font-weight: 600;
+}
+.sidebar-header .cross {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 0 5px;
+}
+.sidebar-header .cross:hover {
+    border: 1px solid white;
+    background-color: rgba(174, 105, 63, 0.1);
+}
+.sidebar-header .toggle {
+    position: absolute;
+    top: 20px;
+    right: -90px;
+    font-size: 2rem;
+    color: white;
+    padding: 0 10px;
+    transition: 1s;
+}
+.sidebar-header .toggle-active {
+    color: transparent;
+    /*visibility: hidden;*/
+    opacity: 0;
+}
+.sidebar-header .toggle:hover {
+    transition: 1s;
+    color: rgba(174, 105, 63, 0.97);
+    border: 1px solid white;
+    background-color: rgba(174, 105, 63, 0.1);
+}
+.sidebar ul {
+    /*padding: 20px;*/
+}
+.sidebar ul li {
+    list-style: none;
+    border-bottom: 1px solid black;
+}
+.sidebar ul li:hover {
+    background-color: rgba(174, 105, 63, 0.97);
+}
+.sidebar ul li a {
+    display: inline-block;
+    padding: 20px 60px;
+    text-decoration: none;
+    color: white;
+}

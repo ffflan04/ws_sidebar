@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p&family=Noto+Sans+JP:wght@300&family=Poppins:ital,wght@1,800&family=Ubuntu:ital,wght@1,300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'M PLUS 1p', sans-serif; /* Google Fonts を、全CSSに適用させる。*/
+}
+
+.sidebar {
+    position: fixed;
+    left: -250px;
+    background-color: rgb(75, 48, 17);
+    width: 250px;
+    height: 100%;
+    transition: 0.5s;
+}
+.sidebar header {
+    font-size: 22px;
+    color: white;
+    text-align: center; 
+    line-height: 70px; /* 主に、テキストの行間を指定する際に使われます。 */
+    background-color: rgb(138, 90, 36);
+    user-select: none; /* ユーザーがコピペ、ドラッグができなくなるうざい機能 */
+}
+.sidebar ul a {
+    display: block; /* aタグは、インライン要素なので、ブロック要素にすることで、高さを指定できる */
+    line-height: 65px; /* padding でも、余白を開けることができるんすよ。実は。*/
+    color: white;
+    font-size: 20px;
+    padding-left: 40px; /* リンクの有効範囲内で要素を広げたいから、末端にあるaタグを拡張します。*/
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid black;
+    transition: 0.4s;
+}
+ul li:hover a { /* hover時のアニメーション対象を別のプロパティにするのは、子要素ならできるよ。*/
+    padding-left: 50px;
+}
+ul li a i {
+    margin-right: 16px;
+}
+
+/* toggle section */
+
+#check {
+    display: none;
+}
+label #hamburgerBtn, 
+label #cancel {
+    position: absolute;
+    cursor: pointer;
+    background: #bf662d;
+    border-radius: 3px;
+}
+label #hamburgerBtn {
+    left: 40px;
+    top: 25px;
+    font-size: 25px;
+    color: white;
+    padding: 6px 12px;
+    transition: 0.5s;
+}
+label #cancel {
+    z-index: 10;
+    left: -195px;
+    top: 17px;
+    font-size: 30px;
+    color: white;
+    padding: 4px 9px;
+    transition: all 0.5s;
+}
+#check:checked ~ .sidebar { /* すげぇ。cssだけで、クリックレスポンス実装できてる。*/
+    left: 0;
+}
+#check:checked ~ label #hamburgerBtn {
+    left: 250px; /* 要素同士を、関連づけなくても、アニメーションを同期させている。*/
+    opacity: 0;
+    pointer-events: none; /* none にすることで、ホバー、クリックイベントを受け取りません。*/
+}
+#check:checked ~ label #cancel {
+    left: 195px;
+}
+#check:checked ~ .bg {
+    margin-left: 250px;
+}
+.bg {
+    height: 100vh;
+    background-image: url(./img/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    transition: all 0.5s;
+}

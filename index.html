@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar-Tutorial</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- toggle section -->
+    <input type="checkbox" id="check"><!-- このラジオボタンが、cssのトリガーになります。-->
+    <label for="check"><!-- labelタグ = フォームの構成部品(ラジオボタンなど)を関連づけます。-->
+        <i class="fas fa-bars" id="hamburgerBtn"></i>
+        <i class="fas fa-times" id="cancel"></i>
+    </label>
+
+    <div class="sidebar">
+        <header>お店情報</header>
+        <ul>
+            <li><a href="#"><i class="fas fa-qrcode"></i>ダッシュボード</a></li>
+            <li><a href="#"><i class="fas fa-link"></i>コミュニティ</a></li>
+            <li><a href="#"><i class="fas fa-coffee"></i>コーヒ一</a></li>
+            <li><a href="#"><i class="fas fa-calendar-week"></i>イベント</a></li>
+            <li><a href="#"><i class="fas fa-sliders-h"></i>サービス</a></li>
+            <li><a href="#"><i class="far fa-question-circle"></i>詳細情報</a></li>
+            <li><a href="#"><i class="fas fa-envelope"></i>お問い合わせ</a></li>
+        </ul>
+    </div>
+
+    <div class="bg"></div>
+</body>
+</html>

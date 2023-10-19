@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sidebar-website</title>
+    <link rel="stylesheet" href="mycode_sidebar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <main class="canvas">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <span>お店情報</span>
+                <span class="cross"><i class="fa-solid fa-xmark"></i></span>
+                <span class="toggle"><i class="fa-solid fa-bars"></i></span>
+            </div>
+            <ul>
+                <li><a href="#"><i class="fa-regular fa-calendar-days"></i> ダッシュボード</a></li>
+                <li><a href="#"><i class="fa-solid fa-users"></i> コミュニティ</a></li>
+                <li><a href="#"><i class="fa-solid fa-poo"></i> コーヒー</a></li>
+                <li><a href="#"><i class="fa-solid fa-champagne-glasses"></i> イベント</a></li>
+                <li><a href="#"><i class="fa-solid fa-gift"></i> サービス</a></li>
+                <li><a href="#"><i class="fa-solid fa-circle-question"></i> 詳細情報</a></li>
+                <li><a href="#"><i class="fa-solid fa-envelope"></i> お問い合わせ</a></li>
+            </ul>
+        </div>
+    </main>
+
+    <script>
+        const $sidebar = document.querySelector('.sidebar')
+        const $cross = document.querySelector('.cross')
+        const $toggle = document.querySelector('.toggle')
+        const $canvas = document.querySelector('.canvas')
+        $toggle.onclick = function(){
+            $sidebar.classList.add('active')
+            $toggle.classList.add('toggle-active')
+            $canvas.style.marginLeft = '250px'
+        }
+        $cross.onclick = function(){
+            $sidebar.classList.remove('active')
+            $toggle.classList.remove('toggle-active')
+            $canvas.style.marginLeft = '0'
+        }
+    </script>
+</body>
+</html>
